@@ -1,0 +1,11 @@
+<div class="card border-warning mb-3" style="max-width: 26rem; height: 12rem;">
+    <div class="card-header">
+        <div class="d-flex justify-content-between">
+            <h5>{{author.name}}</h5>
+            <span class="fevorite" (click)="addToFevorite(author)">Add to fevorite</span>
+        </div>
+    </div>
+    <div class="card-body" style=" overflow: auto;">
+        <p class="card-text">{{author.bio}}</p>
+    </div>
+</div>

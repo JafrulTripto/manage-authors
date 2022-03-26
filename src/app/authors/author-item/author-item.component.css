@@ -1,0 +1,7 @@
+.fevorite {
+    cursor: pointer;
+}
+
+.fevorite:hover {
+    color: #ff4d6d;
+}
