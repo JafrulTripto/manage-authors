@@ -22,7 +22,7 @@ export class AuthorService {
         return this.http.get<any>(`https://api.quotable.io/authors?limit=${limit}&skip=${skip}`).pipe(map(response => {
             let authors: Author[] = []
             response.results.forEach((element: any) => {
-                const author = new Author(element._id, element.name, element.bio);
+                const author = new Author(element._id, element.name, element.bio, element.link);
                 authors.push(author)
             });
             return {

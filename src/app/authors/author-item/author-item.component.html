@@ -1,4 +1,4 @@
-<div class="card border-warning mb-3" style="max-width: 26rem; height: 12rem;">
+<div class="card border-info mb-3" style="max-width: 26rem; height: 16rem;">
     <div class="card-header">
         <div class="d-flex justify-content-between">
             <h5>{{author.name}}</h5>
@@ -9,4 +9,7 @@
     <div class="card-body" style=" overflow: auto;">
         <p class="card-text">{{author.bio}}</p>
     </div>
+    <div class="card-footer text-muted">
+        <a href={{author.link}} class="card-link">Wiki Link</a>
+      </div>
 </div>

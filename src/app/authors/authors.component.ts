@@ -12,7 +12,7 @@ export class AuthorComponent implements OnInit {
   public authors: Author[] = []
   public pageNumber = 0;
   public lastItemIndex = 0;
-  public count = 12
+  public count = 9
   public loading = false;
   public totalPages = 0;
   constructor(private authorService: AuthorService) { }
