@@ -10,19 +10,37 @@ import { AuthorService } from './authors.service';
 export class AuthorComponent implements OnInit {
 
   public authors: Author[] = []
+  public pageNumber = 0;
+  public lastItemIndex = 0;
+  public count = 12
   public loading = false;
+  public totalPages = 0;
   constructor(private authorService: AuthorService) { }
 
   ngOnInit(): void {
-    this.onFetchAuthors ()
+    this.onFetchAuthors()
   }
 
-  onFetchAuthors () {
+  onFetchAuthors() {
     this.loading = true;
-    this.authorService.fetchAuthors().subscribe(authors => {
+    this.authorService.fetchAuthors(this.lastItemIndex, this.count).subscribe(authors => {
+      this.pageNumber = authors.page
+      this.totalPages = authors.totalPages
+      this.lastItemIndex = authors.lastItemIndex;
       this.authors = authors.results;
-      this.loading = false;  
+      this.loading = false;
     });
   }
 
+  nextPage() {
+    if (this.pageNumber< this.totalPages) {
+      this.onFetchAuthors();
+    }
+  }
+  previousPage() {
+    if (this.pageNumber > 1) {
+      this.lastItemIndex = this.lastItemIndex - this.count * 2;
+      this.onFetchAuthors()
+    }
+  }
 }

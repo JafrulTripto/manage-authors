@@ -2,6 +2,13 @@
     <div class="col-md-4" *ngFor="let author of authors">
         <app-author-item [author]="author"></app-author-item>
     </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item"><button class="page-link" (click)="previousPage()"><</button></li>
+          <li class="page-item"><a class="page-link text-black">{{"Page: " + pageNumber}}</a></li>
+          <li class="page-item"><button class="page-link" (click)="nextPage()">></button></li>
+        </ul>
+      </nav>
 </div>
 <div class="loader" *ngIf="loading">
     <div class="spinner-grow text-primary" role="status">

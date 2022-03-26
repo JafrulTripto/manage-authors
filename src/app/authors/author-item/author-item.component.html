@@ -2,7 +2,8 @@
     <div class="card-header">
         <div class="d-flex justify-content-between">
             <h5>{{author.name}}</h5>
-            <span class="fevorite" (click)="addToFevorite(author)">Add to fevorite</span>
+            <span class="add-fevorite" [hidden]="fevoriteAuthorExists(author)" (click)="addToFevorite(author)">Add to fevorite</span>
+            <span class="remove-fevorite" [hidden]="!fevoriteAuthorExists(author)" (click)="onRemoveFevorite(author)">Remove from fevorite</span>
         </div>
     </div>
     <div class="card-body" style=" overflow: auto;">

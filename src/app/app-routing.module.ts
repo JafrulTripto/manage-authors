@@ -1,7 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AuthorComponent } from "./authors/authors.component";
-import { FevoriteAuthorsComponent } from "./fevorite-authors/fevorite-authors.component";
 
 const appRoutes: Routes = [
     {
@@ -14,9 +13,10 @@ const appRoutes: Routes = [
         component: AuthorComponent
     },
     {
-        path:'fevorite-authors',
-        component: FevoriteAuthorsComponent
+        path:"fevorite-authors",
+        loadChildren:() => import('./fevorite-authors/fevorite-author.module').then(x => x.FevoritehAuthorModule)
     }
+    
 ]
 
 @NgModule({

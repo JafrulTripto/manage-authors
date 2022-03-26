@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Author } from '../authors/author.model';
+import { AuthorService } from '../authors/authors.service';
 
 @Component({
   selector: 'app-fevorite-authors',
@@ -9,10 +10,22 @@ import { Author } from '../authors/author.model';
 export class FevoriteAuthorsComponent implements OnInit {
 
   fevoriteAuthors: Author[] = []
-  constructor() { }
+  authorService:AuthorService;
+  constructor(authorService:AuthorService) {
+    this.authorService = authorService
+   }
 
   ngOnInit(): void {
-    this.fevoriteAuthors = JSON.parse( localStorage.getItem("authors") || "")
+    this.authorService.watchStorage().subscribe((data:string) => {
+      // this will call whenever your localStorage data changes
+      // use localStorage code here and set your data here for ngFor
+      console.log(data);
+      
+      this.fevoriteAuthors = this.authorService.fetchFevoriteAuthors();
+      console.log(this.fevoriteAuthors);
+      
+    })
+    this.fevoriteAuthors = this.authorService.fetchFevoriteAuthors();
   }
 
 }

@@ -1,6 +1,10 @@
 <main>
   <app-sidebar></app-sidebar>
-  <div class="d-flex flex-column flex-grow-1 p-3 bg-light">
-    <div class="container"><router-outlet></router-outlet></div>
+  <div class="d-flex flex-column flex-grow-1 bg-light" style="overflow: auto;">
+    <nav class="navbar navbar-light" style="background-color: #DFDFDE;">
+      <a class="navbar-brand px-3" routerLink="/">Author Manager</a>
+    </nav>
+    <div class="container py-3" ><router-outlet></router-outlet></div>
   </div>
+  <notifier-container></notifier-container>
 </main>

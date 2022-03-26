@@ -1,5 +1,10 @@
-<div class="row">
+<div class="row" *ngIf="fevoriteAuthors.length !== 0">
     <div class="col-md-4" *ngFor="let author of fevoriteAuthors">
         <app-author-item [author]="author"></app-author-item>
+    </div>
+</div>
+<div [hidden]="fevoriteAuthors.length !== 0">
+    <div class="empty-box">
+        <span><h3 class="text-muted text-center">Fevorite author list is empty!!!</h3></span>
     </div>
 </div>

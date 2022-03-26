@@ -13,3 +13,15 @@ body {
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
 }
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 1px;
+    background-color: rgb(255, 255, 255);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #b8b6b6;
+    border-radius: 4px;
+  }

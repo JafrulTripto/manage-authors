@@ -1,7 +1,16 @@
-.fevorite {
+.add-fevorite {
     cursor: pointer;
+    color: #019267;
 }
 
-.fevorite:hover {
-    color: #ff4d6d;
+.add-fevorite:hover {
+    color: #00C897;
+}
+.remove-fevorite {
+    cursor: pointer;
+    color: #D83A56;
+}
+
+.remove-fevorite:hover {
+    color: #FF616D;
 }
